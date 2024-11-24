@@ -2,6 +2,9 @@ import { BrowserRouter, Outlet, Route, Routes } from "react-router";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.tsx";
+import { StepOne } from "./components/step-1.tsx";
+import { StepTwo } from "./components/step-2.tsx";
+import { StepFinal } from "./components/step-final.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <BrowserRouter>
@@ -14,7 +17,9 @@ createRoot(document.getElementById("root")!).render(
         }
       >
         <Route path="/" element={<App />} />
-        <Route path="/step-1" element={<div>yo this is step one!</div>} />
+        <Route path="/step-1" element={<StepOne />} />
+        <Route path="/step-2" element={<StepTwo />} />
+        <Route path="/step-final" element={<StepFinal />} />
       </Route>
     </Routes>
   </BrowserRouter>
