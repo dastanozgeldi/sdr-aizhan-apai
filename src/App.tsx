@@ -11,7 +11,7 @@ export default function BirthdayPage() {
   const [audioPlaying, setAudioPlaying] = useState(false);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-pink-200 to-purple-300 flex flex-col items-center justify-center p-4">
+    <>
       <audio
         controls
         onPlay={() => setAudioPlaying(true)}
@@ -43,6 +43,6 @@ export default function BirthdayPage() {
           <NeVseTakProsto />
         </>
       )}
-    </div>
+    </>
   );
 }

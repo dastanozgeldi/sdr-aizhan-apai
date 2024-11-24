@@ -7,7 +7,8 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Button } from "./ui/button";
-import { Cake } from "lucide-react";
+import { ArrowRight, Cake } from "lucide-react";
+import { Link } from "react-router";
 
 export function NeVseTakProsto() {
   return (
@@ -22,16 +23,22 @@ export function NeVseTakProsto() {
         <DialogHeader>
           <DialogTitle>А не все так просто!</DialogTitle>
           <DialogDescription>
-            Вам нужно четко следовать инструкциям снизу.
+            Вам нужно четко следовать инструкциям снизу. Вы больше их не
+            увидите.
           </DialogDescription>
         </DialogHeader>
-        <div className="flex items-center space-x-2">
-          <ol className="list-decimal list-inside">
-            <li>какая-то инструкция</li>
-            <li>какая-то инструкция</li>
-            <li>какая-то инструкция</li>
-            <li>какая-то инструкция</li>
+        <div>
+          <ol className="list-decimal list-inside mb-4">
+            <li>перейти по первой инструкции</li>
+            <li>полностью выполнить первую инструкцию, перейти на вторую</li>
+            <li>полностью выполнить вторую инструкцию, перейти на финальную</li>
           </ol>
+
+          <Link to="/step-1">
+            <Button className="w-full">
+              первый шаг <ArrowRight />
+            </Button>
+          </Link>
         </div>
       </DialogContent>
     </Dialog>
