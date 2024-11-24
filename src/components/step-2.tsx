@@ -1,41 +1,28 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
+import kvest2 from "@/assets/kvest-2.png";
 
 export const StepTwo = () => {
   const navigate = useNavigate();
-  const [number, setNumber] = useState<number | null>(null);
+  const [answer, setAnswer] = useState<string>("");
 
   const handleClick = () => {
-    if (number === 341) {
-      alert("Жарайсыз!");
-      navigate("/step-final");
-    } else {
-      alert("Өтпеді, тағы жасап көріңіз.");
-      setNumber(null);
-    }
+    alert(
+      "Не важно, главное чтобы ученик понимал алгоритм, не так ли? Любой ответ принимается."
+    );
+    navigate("/step-3");
   };
 
   return (
     <>
-      <p>Ладно, бірінші этаптан өттіңіз.</p>
-      <p>Бұл жерде лафа бітті.</p>
+      <img src={kvest2} alt="Kvest 2" className="h-[300px]" />
 
       <div className="my-3 text-center">
-        <p>Бұл этапта сізге жазуы ең нашар адам көмектеседі (Д****Н)</p>
-        <p>Ол адамға +1 балл қосып берем деп, қол алыссаңыз</p>
-        <p>Д****Н сізге құпия қағазды береді</p>
-      </div>
-
-      <div className="my-3 text-center">
-        <p>құпия қағаздағы контентті decimal түрде енгізіңіз.</p>
+        <p>Найдите ошибку в коде</p>
       </div>
 
       <div className="flex items-center gap-3">
-        <input
-          type="number"
-          value={number || ""}
-          onChange={(e) => setNumber(Number(e.target.value))}
-        />
+        <input value={answer} onChange={(e) => setAnswer(e.target.value)} />
         <button onClick={handleClick}>тапсыру</button>
       </div>
     </>

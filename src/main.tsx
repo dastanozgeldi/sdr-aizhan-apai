@@ -5,6 +5,7 @@ import App from "./App.tsx";
 import { StepOne } from "./components/step-1.tsx";
 import { StepTwo } from "./components/step-2.tsx";
 import { StepFinal } from "./components/step-final.tsx";
+import { StepThree } from "./components/step-3.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <BrowserRouter>
@@ -19,6 +20,7 @@ createRoot(document.getElementById("root")!).render(
         <Route path="/" element={<App />} />
         <Route path="/step-1" element={<StepOne />} />
         <Route path="/step-2" element={<StepTwo />} />
+        <Route path="/step-3" element={<StepThree />} />
         <Route path="/step-final" element={<StepFinal />} />
       </Route>
     </Routes>
